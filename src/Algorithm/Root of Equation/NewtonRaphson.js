@@ -96,7 +96,7 @@ export default function OnePoint() {
 
   function newton_raphson(xold, err) {
     cleardata();
-    if (xold && err != "") {
+    if (xold && err !== "") {
       var xnew = 0;
       var epsilon = parseFloat(0.0);
       var n = 0;
@@ -110,7 +110,7 @@ export default function OnePoint() {
         data["error"][n] = epsilon.toFixed(8);
         n++;
         xold = xnew;
-      } while (Math.abs(epsilon) > err || n == 50);
+      } while (Math.abs(epsilon) > err || n === 50);
       createTable(data["x"], data["error"]);
     }
   }

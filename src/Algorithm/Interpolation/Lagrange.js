@@ -37,11 +37,11 @@ export default function Lagrange() {
     setquantity(fetchdata.col);
     setexpectx(fetchdata.Xi);
     setinterpolate(fetchdata.i);
-    for (var i = 1; i <= fetchdata.col; i++) {
+    for (let i = 1; i <= fetchdata.col; i++) {
       document.getElementById("x" + i).value = fetchdata.X[i - 1];
       document.getElementById("y" + i).value = fetchdata.Y[i - 1];
     }
-    for (var i = 1; i <= fetchdata.i; i++) {
+    for (let i = 1; i <= fetchdata.i; i++) {
       document.getElementById("p" + i).value = fetchdata.I[i - 1];
     }
   }
@@ -49,7 +49,7 @@ export default function Lagrange() {
   function createInput(row) {
     InputX = [];
     InputY = [];
-    for (var i = 1; i <= row; i++) {
+    for (let i = 1; i <= row; i++) {
       InputX.push(
         <InputNumber
           style={{
@@ -104,20 +104,20 @@ export default function Lagrange() {
     inx = [];
     iny = [];
     interpolatePoint = [];
-    for (var i = 1; i <= quantity; i++) {
-      if (document.getElementById("x" + i).value == "") {
+    for (let i = 1; i <= quantity; i++) {
+      if (document.getElementById("x" + i).value === "") {
         inx[i] = 0;
       } else {
         inx[i] = parseFloat(document.getElementById("x" + i).value);
       }
-      if (document.getElementById("y" + i).value == "") {
+      if (document.getElementById("y" + i).value === "") {
         iny[i] = 0;
       } else {
         iny[i] = parseFloat(document.getElementById("y" + i).value);
       }
     }
-    for (var i = 1; i <= interpolate; i++) {
-      if (document.getElementById("p" + i).value == "") {
+    for (let i = 1; i <= interpolate; i++) {
+      if (document.getElementById("p" + i).value === "") {
         interpolatePoint[i] = 0;
       } else {
         interpolatePoint[i] = parseFloat(
@@ -131,7 +131,7 @@ export default function Lagrange() {
   }
 
   function handleInput(value) {
-    if (value == null || value < 0) {
+    if (value === null || value < 0) {
       value = 0;
     }
     if (value >= 0) {
@@ -141,7 +141,7 @@ export default function Lagrange() {
   }
 
   function handleInterpolate(value) {
-    if (value == null || value < 0) {
+    if (value === null || value < 0) {
       value = 0;
     }
     if (value >= 0) {
@@ -150,7 +150,7 @@ export default function Lagrange() {
     }
   }
   function handleExpectX(value) {
-    if (value == null) {
+    if (value === null) {
       value = 0;
     }
     setexpectx(parseFloat(value));

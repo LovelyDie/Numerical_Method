@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Select, Card, Input, Button, Table } from "antd";
-import { det, add, subtract, multiply, transpose } from "mathjs";
+import { add, subtract, multiply, transpose } from "mathjs";
 import axios from "axios";
 
 const { Option } = Select;
@@ -12,7 +12,7 @@ let matrixX = [];
 let A = [];
 let B = [];
 let x = [];
-let output;
+// let output;
 let epsilon;
 let count = 1;
 
@@ -83,7 +83,7 @@ export default function ConjugateGradient() {
       A[i] = [];
       for (var j = 0; j < matrix; j++) {
         if (
-          document.getElementById("a" + (i + 1) + "" + (j + 1)).value ==
+          document.getElementById("a" + (i + 1) + "" + (j + 1)).value ===
           (null || "")
         ) {
           A[i][j] = 0;
@@ -93,12 +93,12 @@ export default function ConjugateGradient() {
           );
         }
       }
-      if (document.getElementById("b" + (i + 1)).value == (null || "")) {
+      if (document.getElementById("b" + (i + 1)).value === (null || "")) {
         B.push(0);
       } else {
         B.push(parseFloat(document.getElementById("b" + (i + 1)).value));
       }
-      if (document.getElementById("x" + (i + 1)).value == (null || "")) {
+      if (document.getElementById("x" + (i + 1)).value === (null || "")) {
         x.push(0);
       } else {
         x.push(parseFloat(document.getElementById("x" + (i + 1)).value));
@@ -109,23 +109,6 @@ export default function ConjugateGradient() {
   function handleChange(value) {
     setmatrix(value);
     createMatrix(parseInt(value), parseInt(value));
-  }
-
-  function positive_definite(dimention) {
-    var tempMatrix = [];
-    for (var i = 0; i < dimention; i++) {
-      tempMatrix[i] = [];
-      for (var j = 0; j < dimention; j++) {
-        tempMatrix[i][j] = A[i][j];
-      }
-    }
-    if (det(tempMatrix) <= 0) {
-      return false;
-    }
-    if (dimention !== matrix - 1) {
-      return positive_definite(++dimention);
-    }
-    return true;
   }
 
   function conjugate_gradient() {
@@ -169,7 +152,7 @@ export default function ConjugateGradient() {
       D = add(multiply(R, -1), multiply(α, D));
       // console.log(D);
     } while (epsilon > 0.000001);
-    output = x;
+    // output = x;
 
     setanswercount(answercount + 1);
     // this.setState({
@@ -282,7 +265,7 @@ export default function ConjugateGradient() {
                 {matrixX}
               </Card>
             </div>
-            {matrix != 0 && (
+            {matrix !== 0 && (
               <Card>
                 <Button
                   size="large"

@@ -4,7 +4,7 @@ import { Layout } from "antd";
 
 import "./Home.css";
 
-const { Header, Footer, Sider, Content } = Layout;
+// const { Header, Footer, Sider, Content } = Layout;
 
 export default function Home() {
   return (

@@ -128,7 +128,9 @@ export default function Multiple() {
       inx[i] = [];
       xy[i] = [];
       for (var j = 0; j < columns; j++) {
-        if (document.getElementById("x" + (i + 1) + "" + (j + 1)).value == "") {
+        if (
+          document.getElementById("x" + (i + 1) + "" + (j + 1)).value === ""
+        ) {
           inx[i][j] = 0;
         } else {
           inx[i][j] = parseFloat(
@@ -137,7 +139,7 @@ export default function Multiple() {
         }
         xy[i][j] = inx[i][j];
       }
-      if (document.getElementById("y" + (i + 1)).value == "") {
+      if (document.getElementById("y" + (i + 1)).value === "") {
         iny[i] = 0;
       } else {
         iny[i] = parseFloat(document.getElementById("y" + (i + 1)).value);
@@ -145,7 +147,7 @@ export default function Multiple() {
       xy[i][columns] = iny[i];
     }
     for (let i = 0; i < columns; i++) {
-      if (document.getElementById("ex" + (i + 1)).value == "") {
+      if (document.getElementById("ex" + (i + 1)).value === "") {
         inex[i] = 0;
       } else {
         inex[i] = parseFloat(document.getElementById("ex" + (i + 1)).value);
@@ -155,7 +157,7 @@ export default function Multiple() {
   }
 
   function handleInput(value) {
-    if (value == null || value < 0) {
+    if (value === null || value < 0) {
       value = 0;
     }
     if (value >= 0) {
@@ -165,14 +167,14 @@ export default function Multiple() {
   }
 
   // function handleExpectX(value) {
-  //   if (value == null) {
+  //   if (value === null) {
   //     value = 0;
   //   }
   //   // setexpectx(parseFloat(value));
   // }
 
   function handleColumn(value) {
-    if (value == null || value < 0) {
+    if (value === null || value < 0) {
       value = 0;
     }
     if (value >= 0) {

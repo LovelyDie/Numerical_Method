@@ -61,7 +61,7 @@ export default function GaussSeidei() {
       A[i] = [];
       for (var j = 0; j < matrix; j++) {
         if (
-          document.getElementById("a" + (i + 1) + "" + (j + 1)).value ==
+          document.getElementById("a" + (i + 1) + "" + (j + 1)).value ===
           (null || "")
         ) {
           A[i][j] = 0;
@@ -71,12 +71,12 @@ export default function GaussSeidei() {
           );
         }
       }
-      if (document.getElementById("b" + (i + 1)).value == (null || "")) {
+      if (document.getElementById("b" + (i + 1)).value === (null || "")) {
         B.push(0);
       } else {
         B.push(parseFloat(document.getElementById("b" + (i + 1)).value));
       }
-      if (document.getElementById("x" + (i + 1)).value == (null || "")) {
+      if (document.getElementById("x" + (i + 1)).value === (null || "")) {
         x.push(0);
       } else {
         x.push(parseFloat(document.getElementById("x" + (i + 1)).value));
@@ -104,7 +104,7 @@ export default function GaussSeidei() {
         let sum = 0;
         for (let j = 0; j < matrix; j++) {
           if (i !== j) {
-            //else i == j That is a divide number
+            //else i === j That is a divide number
             sum = sum + A[i][j] * x[j];
           }
         }
@@ -267,7 +267,7 @@ export default function GaussSeidei() {
                 {matrixX}
               </Card>
             </div>
-            {matrix != 0 && (
+            {matrix !== 0 && (
               <Card>
                 <Button
                   size="large"

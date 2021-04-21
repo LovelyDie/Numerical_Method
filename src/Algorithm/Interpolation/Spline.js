@@ -86,12 +86,12 @@ export default function Spline() {
     inx = [];
     iny = [];
     for (var i = 1; i <= quantity; i++) {
-      if (document.getElementById("x" + i).value == "") {
+      if (document.getElementById("x" + i).value === "") {
         inx[i] = 0;
       } else {
         inx[i] = parseFloat(document.getElementById("x" + i).value);
       }
-      if (document.getElementById("y" + i).value == "") {
+      if (document.getElementById("y" + i).value === "") {
         iny[i] = 0;
       } else {
         iny[i] = parseFloat(document.getElementById("y" + i).value);
@@ -100,7 +100,7 @@ export default function Spline() {
   }
 
   function handleInput(value) {
-    if (value == null || value < 0) {
+    if (value === null || value < 0) {
       value = 0;
     }
     if (value >= 0) {
@@ -110,7 +110,7 @@ export default function Spline() {
   }
 
   function handleExpectX(value) {
-    if (value == null) {
+    if (value === null) {
       value = 0;
     }
     setexpectx(parseFloat(value));

@@ -107,7 +107,7 @@ export default function FalsePosition() {
 
   function calFalse(l, r, inerr) {
     cleardata();
-    if (l && r && inerr != "") {
+    if (l && r && inerr !== "") {
       let m = (l + r) / 2;
       let xm = (l * fx(m) - r * fx(l)) / (fx(r) - fx(l));
       let xr = fx(r);
@@ -121,7 +121,7 @@ export default function FalsePosition() {
   }
 
   function False_Posion(l, r, old_m, inerr, err, i) {
-    if (err <= inerr || i == 49) {
+    if (err <= inerr || i === 49) {
       data["xl"][i] = l;
       data["xr"][i] = r;
       data["x"][i] = old_m.toFixed(8);

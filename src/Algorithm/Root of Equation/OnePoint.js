@@ -88,13 +88,13 @@ export default function OnePoint() {
   }
 
   function one_point(xo, inerr, i) {
-    if (xo && inerr != "") {
+    if (xo && inerr !== "") {
       let xn = fx(xo);
       let err = Math.abs((xn - xo) / xn);
 
       data["x"][i] = xn.toFixed(8);
       data["error"][i] = err.toFixed(8);
-      if (err < inerr || i == 50 || xn == "Infinity") {
+      if (err < inerr || i === 50 || xn === "Infinity") {
         createTable(data["x"], data["error"]);
         return;
       } else {

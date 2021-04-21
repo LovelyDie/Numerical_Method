@@ -68,7 +68,9 @@ export default function Camer() {
     for (var i = 0; i < matrix; i++) {
       A[i] = [];
       for (var j = 0; j < matrix; j++) {
-        if (document.getElementById("a" + (i + 1) + "" + (j + 1)).value == "") {
+        if (
+          document.getElementById("a" + (i + 1) + "" + (j + 1)).value === ""
+        ) {
           A[i][j] = 0;
         } else {
           A[i][j] = parseFloat(
@@ -76,7 +78,7 @@ export default function Camer() {
           );
         }
       }
-      if (document.getElementById("b" + (i + 1)).value == "") {
+      if (document.getElementById("b" + (i + 1)).value === "") {
         B.push(0);
       } else {
         B.push(parseFloat(document.getElementById("b" + (i + 1)).value));
@@ -90,7 +92,7 @@ export default function Camer() {
     var data = [];
     var counter = 0;
 
-    while (counter != matrix) {
+    while (counter !== matrix) {
       var transformMatrix = JSON.parse(JSON.stringify(A)); //Deep copy
       for (var i = 0; i < matrix; i++) {
         for (var j = 0; j < matrix; j++) {
@@ -209,7 +211,7 @@ export default function Camer() {
               </Card>
               <br />
             </div>
-            {matrix != 0 && (
+            {matrix !== 0 && (
               <Card>
                 <Button
                   size="large"

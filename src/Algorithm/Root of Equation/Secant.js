@@ -90,7 +90,7 @@ export default function Secant() {
   }
 
   var secant = (x1, x2, inerr, i) => {
-    if ((x1 && x2) || inerr != "") {
+    if ((x1 && x2) || inerr !== "") {
       let delX = (fx(x1) * (x2 - x1)) / (fx(x2) - fx(x1));
       let xn = x1 - delX;
       let err = Math.abs((xn - x1) / xn);
@@ -101,8 +101,13 @@ export default function Secant() {
       data["x"][i] = xn.toFixed(8);
       data["error"][i] = err.toFixed(8);
 
-      if (err < inerr || i == 50 || xn == "Infinity" || fx(x2) - fx(x1) == 0) {
-        // fx(x2) - fx(x1) == 0 for bug NaN
+      if (
+        err < inerr ||
+        i === 50 ||
+        xn === "Infinity" ||
+        fx(x2) - fx(x1) === 0
+      ) {
+        // fx(x2) - fx(x1) === 0 for bug NaN
         createTable(data["x"], data["error"]);
         return;
       } else {

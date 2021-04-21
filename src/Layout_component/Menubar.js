@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu } from "antd";
 
 // import { Router } from "react-router-dom";
-import { Link, useLocation, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { PageHeader } from "antd";
 
 // import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
@@ -14,21 +14,21 @@ const { SubMenu } = Menu;
 
 function Menubar() {
   const [current, setcurrent] = useState("Home");
-  const [title, settitle] = useState("");
-  const [subtitle, setsubtitle] = useState("");
+  const [title, settitle] = useState("Home");
+  const [subtitle, setsubtitle] = useState("Home Page");
 
-  const location = useLocation();
+  // const location = useLocation();
 
-  useEffect(() => {
-    // console.log(location.pathname.substring(1,));
-    setcurrent(location.pathname.substring(1));
-    for (const i in alltitle) {
-      if (current == alltitle[i].cu) {
-        settitle(alltitle[i].tt);
-        setsubtitle(alltitle[i].st);
-      }
-    }
-  });
+  // useEffect(() => {
+  //   // console.log(location.pathname.substring(1,));
+  //   // setcurrent(location.pathname.substring(1));
+  //   for (const i in alltitle) {
+  //     if (current === alltitle[i].cu) {
+  //       settitle(alltitle[i].tt);
+  //       setsubtitle(alltitle[i].st);
+  //     }
+  //   }
+  // });
 
   const alltitle = [
     {
@@ -131,7 +131,7 @@ function Menubar() {
   const handleClick = (e) => {
     setcurrent(e.key);
     for (const i in alltitle) {
-      if (e.key == alltitle[i].cu) {
+      if (e.key === alltitle[i].cu) {
         settitle(alltitle[i].tt);
         setsubtitle(alltitle[i].st);
       }

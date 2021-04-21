@@ -107,7 +107,7 @@ export default function Bisection() {
 
   function calbi(l, r, inerr) {
     cleardata();
-    if (l && r && inerr != "") {
+    if (l && r && inerr !== "") {
       let m = (l + r) / 2;
       let xm = fx(m);
       let xr = fx(r);
@@ -124,7 +124,7 @@ export default function Bisection() {
 
   function bisec(l, r, old_m, inerr, err, i) {
     // console.log(inerr);
-    if (err <= inerr || i == 49) {
+    if (err <= inerr || i === 49) {
       // console.log(l);
       // console.log(r);
       // console.log(i);

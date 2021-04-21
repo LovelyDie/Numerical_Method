@@ -60,7 +60,9 @@ export default function GaussEliminate() {
     for (var i = 0; i < matrix; i++) {
       A[i] = [];
       for (var j = 0; j < matrix; j++) {
-        if (document.getElementById("a" + (i + 1) + "" + (j + 1)).value == "") {
+        if (
+          document.getElementById("a" + (i + 1) + "" + (j + 1)).value === ""
+        ) {
           A[i][j] = 0;
         } else {
           A[i][j] = parseFloat(
@@ -68,7 +70,7 @@ export default function GaussEliminate() {
           );
         }
       }
-      if (document.getElementById("b" + (i + 1)).value == "") {
+      if (document.getElementById("b" + (i + 1)).value === "") {
         B.push(0);
       } else {
         B.push(parseFloat(document.getElementById("b" + (i + 1)).value));
@@ -222,7 +224,7 @@ export default function GaussEliminate() {
               </Card>
               <br />
             </div>
-            {matrix != 0 && (
+            {matrix !== 0 && (
               <Card>
                 <Button
                   size="large"
