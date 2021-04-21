@@ -1,0 +1,19 @@
+@import 'antd/dist/antd.css';
+
+.ant-menu{
+  background-color: #5c5fc2;
+  border-bottom: 0px;
+}
+
+/* .ant-page-header {
+  background-color: #282c34;
+  color: white;
+}  */
+
+/* .ant-menu-submenu-title{
+  
+} */
+
+/* .ant-menu-submenu-selected{
+  
+} */

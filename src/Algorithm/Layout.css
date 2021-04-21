@@ -1,0 +1,62 @@
+.Layoutdiv {
+  display: inline;
+}
+.Inputdivspan {
+  display: flex;
+  margin-top: 5%;
+}
+.mq-editable-field {
+  /* margin-left: 5%; */
+  min-width: 100%;
+  /* border-color: black; */
+}
+.showgraph {
+  margin-top: 1%;
+  margin-left: 10%;
+}
+
+input {
+  margin-top: 2%;
+}
+
+.mq-editable-field .mq-latex-command-input.mq-empty {
+  background: initial;
+  background-color: white;
+}
+
+.Funclatex .Func {
+  font-family: "Dancing Script", cursive;
+  font-size: 36px;
+}
+
+.Funclatex .Latex {
+  font-size: 24px;
+}
+
+.ant-row {
+  min-width: 100vh;
+}
+
+.ant-card-head {
+  background-color: rgb(102, 102, 238);
+  color: white;
+}
+
+hr {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.dcg-graphpaper-branding {
+  display: none;
+}
+/* .ant-card-body {
+  background-color: blue;
+} */
+/* .mq-textarea,
+.mq-root-block mq-empty::before,
+.mq-root-block mq-empty,
+.mq-root-block mq-empty::after {
+  background-color: white;
+  color: white;
+} */ ;
