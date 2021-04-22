@@ -25,7 +25,7 @@ export default function Jacobi() {
     let key = "AbksdfbjhI56sdf5Sd89f9sdSF41";
     let fetchdata = await axios({
       method: "get",
-      url: "http://localhost:8080/Jacobi&key=" + key,
+      url: "http://localhost:8080/Jacobi?auth_key=" + key,
     })
       .then((response) => {
         // console.log("response: ", response.data);

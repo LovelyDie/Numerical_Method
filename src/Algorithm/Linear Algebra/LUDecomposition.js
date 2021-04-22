@@ -34,7 +34,7 @@ export default function LUDecomposition() {
     let key = "AbksdfbjhI56sdf5Sd89f9sdSF41";
     let fetchdata = await axios({
       method: "get",
-      url: "http://localhost:8080/LU&key=" + key,
+      url: "http://localhost:8080/LU?auth_key=" + key,
     })
       .then((response) => {
         // console.log("response: ", response.data);

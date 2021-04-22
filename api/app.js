@@ -37,13 +37,24 @@ const openapiSpecification = swaggerJsDoc(options);
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(openapiSpecification)); //path
 /**
  * @swagger
-
  * /:
  *   get:
  *     summary: Returns the list of all the Method
  *     responses:
  *       200:
  *         description: The list of the Method
+ */
+
+/**
+ * @swagger
+ * components:
+ *  securitySchemes:
+ *    ApiKeyAuth:
+ *        type: apiKey
+ *        in: query
+ *        name: auth_key
+ *  security:
+ *     - ApiKeyAuth: []
  */
 
 /**
@@ -59,6 +70,8 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(openapiSpecification)); //path
  *           type: string
  *         required: true
  *         description: The id of method
+ *     security:
+ *      - ApiKeyAuth: []     
  *     responses:
  *       200:
  *         description: The book description by id
@@ -76,12 +89,14 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(openapiSpecification)); //path
 app.get("/", (req, res) => {
   res.send(req.app.api.get("api"));
 });
-app.get("/:id&key=:token", (req, res) => {
-  if (req.params.token === "AbksdfbjhI56sdf5Sd89f9sdSF41") {
+app.get("/:id", (req, res) => {
+  if (req.query.auth_key === "AbksdfbjhI56sdf5Sd89f9sdSF41") {
     if (!req.app.api.get("api").find({ id: req.params.id }).value()) {
       res.sendStatus(404);
     }
     res.send(req.app.api.get("api").find({ id: req.params.id }).value());
+  } else {
+    res.sendStatus(404);
   }
 });
 

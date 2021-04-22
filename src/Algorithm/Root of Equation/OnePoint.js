@@ -66,7 +66,7 @@ export default function OnePoint() {
     let key = "AbksdfbjhI56sdf5Sd89f9sdSF41";
     let fetchdata = await axios({
       method: "get",
-      url: "http://localhost:8080/Onepoint&key=" + key,
+      url: "http://localhost:8080/Onepoint?auth_key=" + key,
     })
       .then((response) => {
         // console.log("response: ", response.data);

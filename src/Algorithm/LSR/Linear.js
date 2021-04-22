@@ -20,7 +20,7 @@ export default function Linear() {
     let key = "AbksdfbjhI56sdf5Sd89f9sdSF41";
     let fetchdata = await axios({
       method: "get",
-      url: "http://localhost:8080/Linear&key=" + key,
+      url: "http://localhost:8080/Linear?auth_key=" + key,
     })
       .then((response) => {
         // console.log("response: ", response.data);

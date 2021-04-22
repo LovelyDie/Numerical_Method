@@ -25,7 +25,7 @@ export default function GaussSeidei() {
     let key = "AbksdfbjhI56sdf5Sd89f9sdSF41";
     let fetchdata = await axios({
       method: "get",
-      url: "http://localhost:8080/GaussSeidel&key=" + key,
+      url: "http://localhost:8080/GaussSeidel?auth_key=" + key,
     })
       .then((response) => {
         // console.log("response: ", response.data);

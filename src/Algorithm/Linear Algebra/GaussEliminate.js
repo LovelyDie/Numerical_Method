@@ -33,7 +33,7 @@ export default function GaussEliminate() {
     let key = "AbksdfbjhI56sdf5Sd89f9sdSF41";
     let fetchdata = await axios({
       method: "get",
-      url: "http://localhost:8080/Gausseliminate&key=" + key,
+      url: "http://localhost:8080/Gausseliminate?auth_key=" + key,
     })
       .then((response) => {
         // console.log("response: ", response.data);
