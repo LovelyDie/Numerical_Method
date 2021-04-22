@@ -24,24 +24,6 @@ import Linear from "./Algorithm/LSR/Linear";
 import Polynomial from "./Algorithm/LSR/Polynomial";
 import Multiple from "./Algorithm/LSR/Multiple";
 
-// import axios from "axios";
-
-// let fetchdata = axios({
-//   method: "get",
-//   url: "http://localhost:8080/",
-// })
-//   .then((response) => {
-//     console.log("response: ", response.data);
-//     console.log("refresh");
-//     return response.data;
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//     return undefined;
-//   });
-
-// console.log(fetchdata);
-
 function App() {
   return (
     <div className="App">

@@ -24,9 +24,10 @@ export default function Spline() {
   }
 
   async function getdata() {
+    let key = "AbksdfbjhI56sdf5Sd89f9sdSF41";
     let fetchdata = await axios({
       method: "get",
-      url: "http://localhost:8080/Spline",
+      url: "http://localhost:8080/Spline&key=" + key,
     })
       .then((response) => {
         // console.log("response: ", response.data);

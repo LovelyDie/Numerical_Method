@@ -18,9 +18,10 @@ export default function Lagrange() {
   const [answercount, setanswercount] = useState(0);
 
   async function getdata() {
+    let key = "AbksdfbjhI56sdf5Sd89f9sdSF41";
     let fetchdata = await axios({
       method: "get",
-      url: "http://localhost:8080/Lagrange",
+      url: "http://localhost:8080/Lagrange&key=" + key,
     })
       .then((response) => {
         // console.log("response: ", response.data);

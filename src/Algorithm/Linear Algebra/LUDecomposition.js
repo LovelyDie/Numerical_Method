@@ -31,9 +31,10 @@ export default function LUDecomposition() {
   const [answercount, setanswercount] = useState(0);
 
   async function getdata() {
+    let key = "AbksdfbjhI56sdf5Sd89f9sdSF41";
     let fetchdata = await axios({
       method: "get",
-      url: "http://localhost:8080/LU",
+      url: "http://localhost:8080/LU&key=" + key,
     })
       .then((response) => {
         // console.log("response: ", response.data);

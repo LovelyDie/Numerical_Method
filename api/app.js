@@ -9,6 +9,7 @@ const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 const adapter = new FileSync("data.json");
 const api = low(adapter);
+
 app.use(cors());
 // app.use(bodyParser.json());
 app.use(express.json());
@@ -64,14 +65,24 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(openapiSpecification)); //path
  *       404:
  *         description: The book was not found
  */
+
+// app.get("/jwt", (req, res) => {
+//   res.json({
+//     token: jsonwebtoken.sign({ user: "Lovely_Die" }, jwtSecret),
+//   });
+// });
+// app.use(jwt({ secret: jwtSecret, algorithms: ["HS256"] }));
+
 app.get("/", (req, res) => {
   res.send(req.app.api.get("api"));
 });
-app.get("/:id", (req, res) => {
-  if (!req.app.api.get("api").find({ id: req.params.id }).value()) {
-    res.sendStatus(404);
+app.get("/:id&key=:token", (req, res) => {
+  if (req.params.token === "AbksdfbjhI56sdf5Sd89f9sdSF41") {
+    if (!req.app.api.get("api").find({ id: req.params.id }).value()) {
+      res.sendStatus(404);
+    }
+    res.send(req.app.api.get("api").find({ id: req.params.id }).value());
   }
-  res.send(req.app.api.get("api").find({ id: req.params.id }).value());
 });
 
 app.listen(8080, () => {

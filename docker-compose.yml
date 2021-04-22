@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  app:
+    container_name: numer_proj
+    build: .
+    ports:
+      - 80:80
+  api:
+    container_name: mumer_api
+    hostname: api
+    build: ./api
+    restart: always
+    ports:
+      - 8080:8080

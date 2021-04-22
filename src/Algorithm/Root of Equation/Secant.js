@@ -64,9 +64,10 @@ export default function Secant() {
   const [c, setc] = useState(1);
 
   async function getdata() {
+    let key = "AbksdfbjhI56sdf5Sd89f9sdSF41";
     let fetchdata = await axios({
       method: "get",
-      url: "http://localhost:8080/Secant",
+      url: "http://localhost:8080/Secant&key=" + key,
     })
       .then((response) => {
         // console.log("response: ", response.data);
